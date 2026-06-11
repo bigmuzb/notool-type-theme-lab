@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NOTOOL Montserrat heading lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    (() => {
+      const dark = window.matchMedia?.('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = dark ? 'notool-dark' : 'sharp-light';
+    })();
+  </script>
+  <style>
+    @font-face { font-family: 'Montserrat Self Hosted'; font-style: normal; font-weight: 100; font-display: swap; src: url('./fonts/montserrat/Montserrat-100.ttf') format('truetype'); }
+    @font-face { font-family: 'Montserrat Self Hosted'; font-style: normal; font-weight: 200; font-display: swap; src: url('./fonts/montserrat/Montserrat-200.ttf') format('truetype'); }
+    @font-face { font-family: 'Montserrat Self Hosted'; font-style: normal; font-weight: 300; font-display: swap; src: url('./fonts/montserrat/Montserrat-300.ttf') format('truetype'); }
+    @font-face { font-family: 'Montserrat Self Hosted'; font-style: normal; font-weight: 400; font-display: swap; src: url('./fonts/montserrat/Montserrat-400.ttf') format('truetype'); }
+    @font-face { font-family: 'Montserrat Self Hosted'; font-style: normal; font-weight: 500; font-display: swap; src: url('./fonts/montserrat/Montserrat-500.ttf') format('truetype'); }
+    @font-face { font-family: 'Montserrat Self Hosted'; font-style: normal; font-weight: 600; font-display: swap; src: url('./fonts/montserrat/Montserrat-600.ttf') format('truetype'); }
+    @font-face { font-family: 'Montserrat Self Hosted'; font-style: normal; font-weight: 700; font-display: swap; src: url('./fonts/montserrat/Montserrat-700.ttf') format('truetype'); }
+    @font-face { font-family: 'Montserrat Self Hosted'; font-style: normal; font-weight: 800; font-display: swap; src: url('./fonts/montserrat/Montserrat-800.ttf') format('truetype'); }
+    @font-face { font-family: 'Montserrat Self Hosted'; font-style: normal; font-weight: 900; font-display: swap; src: url('./fonts/montserrat/Montserrat-900.ttf') format('truetype'); }
+
+    * { box-sizing: border-box; }
+    :root {
+      --display: 'Montserrat Self Hosted', 'Montserrat', 'Inter', system-ui, sans-serif;
+      --body: 'Inter', system-ui, sans-serif;
+      --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      --heading-weight: 400;
+      --tracking-tight: -.052em;
+      --bg: #ffffff;
+      --bg-2: #f7f7fb;
+      --surface: #ffffff;
+      --surface-2: #f2f3f8;
+      --panel: #eef0f7;
+      --text: #000000;
+      --text-soft: #30303b;
+      --text-faint: #60606f;
+      --line: #d6d8e4;
+      --nav: #161827;
+      --nav-2: #222640;
+      --accent: #c43d2f;
+      --accent-hover: #d94d3e;
+      --button-text: #ffffff;
+      --glow-a: rgba(36, 40, 91, .08);
+      --glow-b: rgba(196, 61, 47, .08);
+      --shadow: 0 18px 60px rgba(17, 20, 38, .10);
+      --radius: 18px;
+      color-scheme: light;
+    }
+
+    [data-theme='sharp-light'] {
+      --bg: #ffffff;
+      --bg-2: #f8f8fb;
+      --surface: #ffffff;
+      --surface-2: #f3f4f8;
+      --panel: #eef0f7;
+      --text: #000000;
+      --text-soft: #2b2b35;
+      --text-faint: #5c5d6b;
+      --line: #d5d8e3;
+      --nav: #171928;
+      --nav-2: #242844;
+      --accent: #bb3a2d;
+      --accent-hover: #d54a3a;
+      --glow-a: rgba(35, 40, 95, .075);
+      --glow-b: rgba(187, 58, 45, .075);
+      color-scheme: light;
+    }
+
+    [data-theme='notool-dark'] {
+      --bg: #05050b;
+      --bg-2: #090912;
+      --surface: #10101d;
+      --surface-2: #151529;
+      --panel: #1b1b33;
+      --text: #ffffff;
+      --text-soft: #f2f4ff;
+      --text-faint: #cfd2e7;
+      --line: #343653;
+      --nav: #070711;
+      --nav-2: #17182e;
+      --accent: #ff6652;
+      --accent-hover: #ff7a69;
+      --glow-a: rgba(74, 86, 191, .28);
+      --glow-b: rgba(98, 58, 160, .20);
+      --shadow: 0 24px 90px rgba(0,0,0,.48);
+      color-scheme: dark;
+    }
+
+    [data-theme='soft-wash-dark'] {
+      --bg: #151525;
+      --bg-2: #1a1a2e;
+      --surface: #202038;
+      --surface-2: #292944;
+      --panel: #2e2e4b;
+      --text: #f4f4f7;
+      --text-soft: #c7c7d8;
+      --text-faint: #aaaabe;
+      --line: #3d3d59;
+      --nav: #0f0f1c;
+      --nav-2: #24243f;
+      --accent: #df5948;
+      --accent-hover: #f06a58;
+      --glow-a: rgba(74, 86, 191, .18);
+      --glow-b: rgba(98, 58, 160, .16);
+      --shadow: 0 22px 80px rgba(0,0,0,.34);
+      color-scheme: dark;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--body);
+      font-weight: 400;
+      background:
+        radial-gradient(920px 620px at 82% -10%, var(--glow-a), transparent 64%),
+        radial-gradient(760px 580px at 0% 92%, var(--glow-b), transparent 62%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    h1, h2, h3, h4, summary, .logo, .word, .side-title, .brand-mini strong, .weight-sample strong, .metric strong, .plan b {
+      font-family: var(--display);
+      font-weight: var(--heading-weight);
+      letter-spacing: var(--tracking-tight);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: color-mix(in srgb, var(--surface) 88%, transparent);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 10px 36px rgba(0,0,0,.12);
+    }
+    .topbar-inner { max-width: 1340px; margin: 0 auto; padding: 12px clamp(16px, 3vw, 34px); }
+    .topbar-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand-mini { min-width: 0; }
+    .brand-mini strong { display: block; font-size: 19px; }
+    .brand-mini span { color: var(--text-soft); font-size: 13px; }
+    .menu-button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      border: 1px solid var(--line); border-radius: 999px; padding: 10px 14px;
+      background: var(--panel); color: var(--text); font-family: var(--body); font-size: 13px; font-weight: 800;
+      letter-spacing: .02em; cursor: pointer; transition: background .16s ease, transform .16s ease, border-color .16s ease;
+    }
+    .menu-button:hover { transform: translateY(-1px); border-color: color-mix(in srgb, var(--accent) 48%, var(--line)); }
+    .hamburger { width: 18px; display: grid; gap: 4px; }
+    .hamburger i { display: block; height: 2px; border-radius: 2px; background: var(--text); transition: transform .18s ease, opacity .18s ease; }
+    .menu-button[aria-expanded="true"] .hamburger i:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .menu-button[aria-expanded="true"] .hamburger i:nth-child(2) { opacity: 0; }
+    .menu-button[aria-expanded="true"] .hamburger i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    .control-panel { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .28s ease, opacity .2s ease, margin-top .28s ease; margin-top: 0; }
+    .control-panel.open { grid-template-rows: 1fr; opacity: 1; margin-top: 12px; }
+    .control-panel-inner { overflow: hidden; }
+    .control-grid { display: grid; grid-template-columns: repeat(4, minmax(150px, 1fr)); gap: 12px; align-items: end; padding-top: 2px; }
+    .menu-hint { color: var(--text-faint); font-size: 12px; margin-top: 10px; }
+    label { display: grid; gap: 5px; font-size: 11px; letter-spacing: .13em; text-transform: uppercase; color: var(--text-soft); font-weight: 800; }
+    select {
+      appearance: none; width: 100%; border: 1px solid var(--line); background: var(--surface); color: var(--text); border-radius: 11px;
+      padding: 10px 34px 10px 12px; font-family: var(--body); font-size: 14px;
+      background-image: linear-gradient(45deg, transparent 50%, var(--text-soft) 50%), linear-gradient(135deg, var(--text-soft) 50%, transparent 50%);
+      background-position: calc(100% - 18px) 16px, calc(100% - 13px) 16px; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat;
+    }
+
+    main { max-width: 1340px; margin: 0 auto; padding: 34px clamp(16px, 3vw, 34px) 70px; }
+    .intro { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr); gap: 24px; margin-bottom: 24px; }
+    .note, .mini-card, .landing, .app-shell, .weight-lab, .representative { background: color-mix(in srgb, var(--surface) 96%, transparent); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .note { border-radius: var(--radius); padding: 26px; }
+    .note h1 { font-size: clamp(34px, 5vw, 66px); line-height: .98; margin: 0 0 16px; }
+    .note h1 em { color: var(--accent); font-style: normal; }
+    .note p { color: var(--text-soft); font-size: 17px; max-width: 72ch; margin: 0; }
+    .recommendation { display: grid; gap: 12px; }
+    .mini-card { border-radius: var(--radius); padding: 20px; }
+    .mini-card .k { font-size: 11px; text-transform: uppercase; color: var(--accent); letter-spacing: .14em; font-weight: 900; }
+    .mini-card h3 { font-size: 24px; line-height: 1.08; margin: 8px 0; }
+    .mini-card p { color: var(--text-soft); margin: 0; font-size: 14px; }
+    .font-spec { margin-top: 22px; border-top: 1px solid var(--line); padding-top: 18px; color: var(--text-soft); font-size: 13px; display: grid; gap: 6px; }
+    code { font-family: var(--mono); background: var(--panel); padding: 2px 6px; border-radius: 6px; color: var(--text); }
+
+    .weight-lab { border-radius: 26px; overflow: hidden; margin-bottom: 24px; }
+    .section-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 24px 26px; border-bottom: 1px solid var(--line); background: var(--surface); }
+    .section-head h2 { margin: 0 0 7px; font-size: 34px; line-height: 1.05; }
+    .section-head p { margin: 0; color: var(--text-soft); max-width: 82ch; }
+    .tag { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 7px 11px; color: var(--text-soft); background: var(--panel); font-size: 12px; font-weight: 900; letter-spacing: .03em; white-space: nowrap; }
+    .weight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); }
+    .weight-sample { background: var(--surface); padding: 20px; min-height: 160px; }
+    .weight-sample .w { color: var(--accent); font-family: var(--mono); font-weight: 600; font-size: 12px; margin-bottom: 8px; }
+    .weight-sample strong { display: block; font-size: clamp(24px, 3.2vw, 38px); line-height: 1.02; margin-bottom: 10px; }
+    .weight-sample p { margin: 0; color: var(--text-soft); font-size: 13px; }
+
+    .preview-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr); gap: 24px; align-items: start; }
+    .landing { overflow: hidden; border-radius: 26px; }
+    .landing-nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 26px; border-bottom: 1px solid var(--line); background: var(--surface); }
+    .logo { color: var(--accent); font-size: 26px; text-decoration: none; }
+    .logo small { color: var(--text-faint); font-size: .62em; font-weight: 700; letter-spacing: -.03em; }
+    .links { display: flex; gap: 18px; align-items: center; color: var(--text-soft); font-size: 14px; font-weight: 650; }
+    .pill { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 11px 17px; background: var(--accent); color: var(--button-text); text-decoration: none; font-weight: 800; transition: transform .16s ease, background .16s ease; }
+    .pill:hover { transform: translateY(-1px); background: var(--accent-hover); }
+    .outline { color: var(--text); border: 1px solid var(--line); background: transparent; }
+    .landing-hero { padding: 72px 38px 48px; text-align: center; background: linear-gradient(145deg, color-mix(in srgb, var(--panel) 40%, transparent), transparent); }
+    .eyebrow { display: inline-flex; border: 1px solid var(--line); background: var(--panel); color: var(--text-soft); border-radius: 999px; padding: 7px 12px; font-size: 12px; font-weight: 900; letter-spacing: .03em; }
+    .landing h2 { font-size: clamp(42px, 6.2vw, 78px); line-height: .965; margin: 18px auto 18px; max-width: 780px; }
+    .landing h2 span { color: var(--accent); }
+    .landing .lede { color: var(--text-soft); max-width: 690px; margin: 0 auto 28px; font-size: 18px; }
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .strip { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--nav); color: white; }
+    .strip div { padding: 18px; border-right: 1px solid rgba(255,255,255,.10); font-weight: 800; font-size: 13px; }
+    .strip span { color: var(--accent); margin-right: 8px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 22px; background: color-mix(in srgb, var(--panel) 58%, transparent); }
+    .plan { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px; }
+    .plan b { font-size: 22px; }
+    .plan p { margin: 8px 0 0; color: var(--text-soft); font-size: 13px; }
+
+    .app-shell { border-radius: 26px; overflow: hidden; }
+    .app-nav { background: var(--nav); color: white; display: flex; align-items: center; justify-content: space-between; padding: 15px 18px; }
+    .app-nav .word { color: var(--accent); font-size: 23px; }
+    .app-nav .nav-items { display: flex; gap: 10px; font-size: 12px; color: rgba(255,255,255,.76); font-weight: 800; }
+    .app-nav .active { color: white; border-bottom: 2px solid var(--accent); }
+    .app-body { padding: 22px; background: var(--bg); }
+    .login-card, .answer-card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 22px; margin-bottom: 16px; }
+    .login-card { border-left: 4px solid var(--accent); }
+    .app-shell h3 { margin: 0 0 8px; font-size: 25px; line-height: 1.15; }
+    .app-shell p { color: var(--text-soft); margin: 0 0 16px; font-size: 14px; }
+    .field { display: grid; gap: 6px; margin: 13px 0; }
+    .field span { text-transform: uppercase; letter-spacing: .13em; color: var(--text-soft); font-size: 10px; font-weight: 900; }
+    .field input { border: 1px solid var(--line); border-radius: 8px; padding: 12px; background: var(--surface); color: var(--text); font: 14px var(--body); }
+    .answer-card .source { font-family: var(--mono); background: var(--panel); border: 1px solid var(--line); color: var(--text); padding: 12px; border-radius: 12px; font-size: 12px; }
+    .meter { height: 9px; border-radius: 999px; background: var(--panel); overflow: hidden; margin-top: 12px; }
+    .meter i { display: block; height: 100%; width: 68%; background: var(--accent); }
+
+    .representative { margin-top: 24px; border-radius: 26px; overflow: hidden; }
+    .rep-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+    .rep-tab { border: 1px solid var(--line); border-radius: 999px; padding: 7px 11px; color: var(--text-soft); background: var(--panel); font-size: 12px; font-weight: 900; letter-spacing: .03em; }
+    .rep-tab.active { color: var(--button-text); background: var(--accent); border-color: var(--accent); }
+    .rep-layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); min-height: 620px; }
+    .rep-side { background: linear-gradient(180deg, var(--nav), var(--nav-2)); color: rgba(255,255,255,.80); padding: 22px 16px; }
+    .rep-side .side-title { color: var(--accent); font-size: 23px; margin-bottom: 24px; }
+    .rep-side a { display: block; color: rgba(255,255,255,.76); text-decoration: none; border-radius: 10px; padding: 10px 12px; margin: 4px 0; font-size: 13px; font-weight: 750; }
+    .rep-side a.active, .rep-side a:hover { color: #fff; background: rgba(255,255,255,.09); }
+    .rep-main { padding: 24px; background: var(--bg); }
+    .metric-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+    .metric { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+    .metric span { color: var(--text-faint); font-size: 11px; text-transform: uppercase; letter-spacing: .12em; font-weight: 900; }
+    .metric strong { display: block; font-size: 28px; margin-top: 6px; }
+    .metric small { color: var(--text-soft); }
+    .rep-card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; margin-bottom: 16px; }
+    .rep-card-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 18px; border-bottom: 1px solid var(--line); }
+    .rep-card-head h3 { font-size: 22px; margin: 0; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; color: var(--text-soft); background: var(--panel); padding: 11px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: .11em; font-weight: 900; border-bottom: 1px solid var(--line); white-space: nowrap; }
+    td { padding: 13px 12px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--text); }
+    tr:last-child td { border-bottom: 0; }
+    .status { display: inline-flex; border-radius: 999px; padding: 4px 8px; font-size: 11px; font-weight: 900; background: var(--panel); color: var(--text); white-space: nowrap; }
+    .status.good { background: color-mix(in srgb, #38a169 20%, var(--panel)); }
+    .status.warn { background: color-mix(in srgb, #d69e2e 24%, var(--panel)); }
+    .status.bad { background: color-mix(in srgb, var(--accent) 24%, var(--panel)); }
+    .mono { font-family: var(--mono); font-size: 12px; color: var(--text-soft); }
+    details { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 0; overflow: hidden; }
+    summary { cursor: pointer; padding: 16px 18px; font-size: 21px; list-style-position: inside; }
+    .expanded { padding: 0 18px 18px 18px; color: var(--text-soft); }
+    .expanded p { margin: 0 0 13px; max-width: 92ch; }
+    .quote { font-family: var(--mono); color: var(--text); background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 13px; font-size: 12px; line-height: 1.55; }
+
+    @media (max-width: 980px) {
+      .control-grid, .intro, .preview-grid, .rep-layout, .metric-row { grid-template-columns: 1fr; }
+      .weight-grid { grid-template-columns: 1fr; }
+      .links { display: none; }
+      .strip, .cards { grid-template-columns: 1fr; }
+      .section-head { display: grid; }
+      .rep-side { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-head">
+        <div class="brand-mini">
+          <strong>NOTOOL Montserrat heading lab</strong>
+          <span>Inter body locked. Montserrat self-hosted for headings only. Dark mode now sharp white on pure dark with blue/purple wash.</span>
+        </div>
+        <button class="menu-button" id="menuToggle" type="button" aria-expanded="false" aria-controls="settingsPanel">
+          <span class="hamburger" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Settings</span>
+        </button>
+      </div>
+      <div class="control-panel" id="settingsPanel" aria-hidden="true" inert>
+        <div class="control-panel-inner">
+          <div class="control-grid">
+            <label>Theme
+              <select id="theme">
+                <option value="system">System preference</option>
+                <option value="sharp-light">Sharp white light</option>
+                <option value="notool-dark" selected>Pure dark + blue/purple wash</option>
+                <option value="soft-wash-dark">Old softer washed dark</option>
+              </select>
+            </label>
+            <label>Heading weight
+              <select id="headingWeight">
+                <option value="100">100 Thin</option>
+                <option value="200">200 ExtraLight</option>
+                <option value="300">300 Light</option>
+                <option value="400" selected>400 Regular</option>
+                <option value="500">500 Medium</option>
+                <option value="600">600 SemiBold</option>
+                <option value="700">700 Bold</option>
+                <option value="800">800 ExtraBold</option>
+                <option value="900">900 Black</option>
+              </select>
+            </label>
+            <label>Heading tracking
+              <select id="tracking">
+                <option value="-.065em">Very tight</option>
+                <option value="-.052em" selected>Tight</option>
+                <option value="-.035em">Mild tight</option>
+                <option value="-.015em">Almost normal</option>
+              </select>
+            </label>
+            <label>Body face
+              <select disabled>
+                <option>Inter locked at 400</option>
+              </select>
+            </label>
+          </div>
+          <div class="menu-hint">Use 300–500 first. 600+ is still there for stress-testing, but the current bias is deliberately lighter.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="intro">
+      <article class="note">
+        <h1>Montserrat headings, <em>Inter body</em>, cleaner contrast.</h1>
+        <p>This replaces the mixed-font batch with a narrower decision lab: Montserrat for heading roles only, Inter for body/forms/tables, all available Montserrat weights from 100 to 900, and the dark mode pulled toward pure black with sharp white text plus the blue/purple wash from the softer sample.</p>
+        <div class="font-spec" id="spec"></div>
+      </article>
+      <aside class="recommendation">
+        <div class="mini-card">
+          <div class="k">Current read</div>
+          <h3>Try 400 or 500 first.</h3>
+          <p>Montserrat SemiBold has bite, but the lighter weights feel more premium and less “startup template”. 300 is elegant but may get airy in admin screens.</p>
+        </div>
+        <div class="mini-card">
+          <div class="k">Dark-mode stance</div>
+          <h3>Pure dark base, white text, coloured atmosphere.</h3>
+          <p>The selected dark option keeps the crisp text from pure dark and brings back the blue/purple wash so it does not feel dead flat.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="weight-lab">
+      <header class="section-head">
+        <div>
+          <h2>All Montserrat heading weights</h2>
+          <p>Same words, same Inter paragraph under each. This is the blunt translation check: if a weight looks fancy here but mushy below in the app page, it is not the one.</p>
+        </div>
+        <span class="tag">Self-hosted TTF / headings only</span>
+      </header>
+      <div class="weight-grid">
+        <div class="weight-sample"><div class="w">100 Thin</div><strong style="font-weight:100">Source-backed answers</strong><p>Good for huge display only. Likely too fragile for NOTOOL product headings.</p></div>
+        <div class="weight-sample"><div class="w">200 ExtraLight</div><strong style="font-weight:200">Source-backed answers</strong><p>Elegant but thin. Worth checking in dark mode, especially against glow/shading.</p></div>
+        <div class="weight-sample"><div class="w">300 Light</div><strong style="font-weight:300">Source-backed answers</strong><p>Premium and light. Candidate for hero headlines, risky for small cards.</p></div>
+        <div class="weight-sample"><div class="w">400 Regular</div><strong style="font-weight:400">Source-backed answers</strong><p>Cleanest safe lighter option. This is my starting point from your feedback.</p></div>
+        <div class="weight-sample"><div class="w">500 Medium</div><strong style="font-weight:500">Source-backed answers</strong><p>Still light-ish but with enough authority. Strong candidate for production.</p></div>
+        <div class="weight-sample"><div class="w">600 SemiBold</div><strong style="font-weight:600">Source-backed answers</strong><p>The old-ish direction. Useful, but probably heavier than the room preferred.</p></div>
+        <div class="weight-sample"><div class="w">700 Bold</div><strong style="font-weight:700">Source-backed answers</strong><p>Strong brand voice; can start yelling if used everywhere.</p></div>
+        <div class="weight-sample"><div class="w">800 ExtraBold</div><strong style="font-weight:800">Source-backed answers</strong><p>Landing-page punch only. Too much for app UI headings.</p></div>
+        <div class="weight-sample"><div class="w">900 Black</div><strong style="font-weight:900">Source-backed answers</strong><p>Poster weight. Included for completeness, not recommended as the default.</p></div>
+      </div>
+    </section>
+
+    <section class="preview-grid">
+      <article class="landing">
+        <nav class="landing-nav">
+          <a class="logo">notool<small>.au</small></a>
+          <div class="links"><span>Plans</span><span>Getting started</span><span>Upload packs</span><a class="pill">Start</a></div>
+        </nav>
+        <div class="landing-hero">
+          <span class="eyebrow">Built by builders. Powered by AI.</span>
+          <h2>Drop a tender pack.<br><span>Get source-backed answers.</span></h2>
+          <p class="lede">NOTOOL turns messy construction document packs into searchable answers with citations, page references and uncertainty shown instead of hidden.</p>
+          <div class="hero-actions"><a class="pill">Start with Beginner credit</a><a class="pill outline">See plans</a></div>
+        </div>
+        <div class="strip"><div><span>✓</span>Cited answers</div><div><span>✓</span>Visible sources</div><div><span>✓</span>Approval gates</div><div><span>✓</span>Human escalation</div></div>
+        <div class="cards">
+          <div class="plan"><b>Beginner</b><p>$150 AUD included credit for a first real pack.</p></div>
+          <div class="plan"><b>PAYG</b><p>Top up when you need another run.</p></div>
+          <div class="plan"><b>Pro 100</b><p>Monthly workspace for repeat users.</p></div>
+        </div>
+      </article>
+
+      <article class="app-shell">
+        <div class="app-nav"><div class="word">notool</div><div class="nav-items"><span class="active">QUERY</span><span>UPLOAD</span><span>ADMIN</span><span>USAGE</span></div></div>
+        <div class="app-body">
+          <section class="login-card">
+            <h3>Sign in</h3>
+            <p>Inter stays locked for the product UI. Change only the heading weight above and check whether the app still feels precise.</p>
+            <label class="field"><span>Username or email</span><input value="murray@notool.au"></label>
+            <label class="field"><span>Password</span><input value="••••••••••"></label>
+            <a class="pill" style="width:100%;">Sign in</a>
+          </section>
+          <section class="answer-card">
+            <h3>Answer with evidence</h3>
+            <p>The tender requires practical completion evidence, but the clause depends on the annexure schedule.</p>
+            <div class="source">Source: Tender Pack / Conditions / p. 42 — “Contractor must provide completion evidence...”</div>
+            <div class="meter"><i></i></div>
+          </section>
+        </div>
+      </article>
+    </section>
+
+    <section class="representative">
+      <header class="section-head">
+        <div>
+          <h2>Representative app page: expanded admin review</h2>
+          <p>Dense nav, metrics, a real table, status pills, muted labels, monospaced source snippets and an expanded long-text block. This is where a heading choice earns its keep.</p>
+        </div>
+        <div class="rep-tabs"><span class="rep-tab active">Expanded</span><span class="rep-tab">Tables</span><span class="rep-tab">Long text</span><span class="rep-tab">Evidence</span></div>
+      </header>
+      <div class="rep-layout">
+        <aside class="rep-side">
+          <div class="side-title">notool</div>
+          <a class="active">Dashboard</a><a>Uploads live</a><a>Incidents</a><a>Usage</a><a>LLM catalog</a><a>Provider keys</a><a>Tenant profile</a>
+        </aside>
+        <div class="rep-main">
+          <div class="metric-row">
+            <div class="metric"><span>Pageviews</span><strong>195</strong><small>+22% vs previous 24h</small></div>
+            <div class="metric"><span>Signup visits</span><strong>0</strong><small>Promo page not instrumented yet</small></div>
+            <div class="metric"><span>Uploads</span><strong>12</strong><small>3 awaiting review</small></div>
+            <div class="metric"><span>Avg answer cost</span><strong>$0.42</strong><small>Claude / GPT mix</small></div>
+          </div>
+
+          <section class="rep-card">
+            <div class="rep-card-head"><h3>Recent document jobs</h3><span class="status warn">3 need attention</span></div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Job</th><th>Tenant</th><th>Pack</th><th>Status</th><th>Cost</th><th>Last event</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>J-1042</strong><div class="mono">upload_finalize</div></td><td>Control Aquatics</td><td>Dubbo Aquatic Centre tender addendum pack with marked-up drawings</td><td><span class="status good">Indexed</span></td><td>$1.84</td><td>Sources extracted, 212 chunks</td></tr>
+                  <tr><td><strong>J-1041</strong><div class="mono">query_chain</div></td><td>Demo workspace</td><td>Principal supplied conditions and scope schedule</td><td><span class="status warn">Review</span></td><td>$0.38</td><td>Answer cites p. 42 but confidence is low</td></tr>
+                  <tr><td><strong>J-1040</strong><div class="mono">ocr_worker</div></td><td>Sitemaster trial</td><td>Scanned electrical drawings, image-heavy</td><td><span class="status bad">Partial</span></td><td>$2.11</td><td>OCR fallback used for 18 sheets</td></tr>
+                  <tr><td><strong>J-1039</strong><div class="mono">approval_gate</div></td><td>Beginner user</td><td>Gmail import request</td><td><span class="status warn">Approval</span></td><td>—</td><td>Requires human approval before integration</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <details open>
+            <summary>Expanded answer / source review</summary>
+            <div class="expanded">
+              <p><strong>Question:</strong> “What evidence does the contractor need before practical completion can be claimed?”</p>
+              <p>The answer should stay readable when paragraphs get long. Montserrat is only doing headings here; Inter carries the hard reading work. If a lighter heading weight loses hierarchy, bump it one step and leave the body alone.</p>
+              <p><strong>Draft answer:</strong> The contractor must provide completion evidence, but the exact acceptance path depends on the annexure schedule and any superintendent-specific notice requirements. The pack mentions completion evidence in the conditions, then cross-references the schedule for timing and form.</p>
+              <div class="quote">Source: Tender Pack / Conditions / p. 42 — “Contractor must provide completion evidence before practical completion is certified. Evidence must be supplied in the form and timing described in the annexure schedule...”</div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const root = document.documentElement;
+    const theme = document.getElementById('theme');
+    const headingWeight = document.getElementById('headingWeight');
+    const tracking = document.getElementById('tracking');
+    const spec = document.getElementById('spec');
+    const menuToggle = document.getElementById('menuToggle');
+    const settingsPanel = document.getElementById('settingsPanel');
+
+    function resolvedSystemTheme() {
+      return matchMedia('(prefers-color-scheme: dark)').matches ? 'notool-dark' : 'sharp-light';
+    }
+
+    function apply() {
+      const chosenTheme = theme.value === 'system' ? resolvedSystemTheme() : theme.value;
+      root.dataset.theme = chosenTheme;
+      root.style.setProperty('--heading-weight', headingWeight.value);
+      root.style.setProperty('--tracking-tight', tracking.value);
+      spec.innerHTML = `
+        <div><strong>Heading font:</strong> <code>Montserrat Self Hosted</code>, local TTF files from <code>./fonts/montserrat/</code></div>
+        <div><strong>Body font:</strong> <code>Inter 400</code> locked for paragraphs, forms, tables and admin UI</div>
+        <div><strong>Theme:</strong> <code>${theme.value === 'system' ? `system → ${chosenTheme}` : chosenTheme}</code></div>
+        <div><strong>Active heading weight/tracking:</strong> <code>${headingWeight.value} / ${tracking.value}</code></div>`;
+    }
+
+    function setMenu(open) {
+      settingsPanel.classList.toggle('open', open);
+      settingsPanel.inert = !open;
+      settingsPanel.setAttribute('aria-hidden', String(!open));
+      menuToggle.setAttribute('aria-expanded', String(open));
+    }
+
+    menuToggle.addEventListener('click', () => setMenu(menuToggle.getAttribute('aria-expanded') !== 'true'));
+    [theme, headingWeight, tracking].forEach(el => el.addEventListener('change', apply));
+    matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', apply);
+    apply();
+  </script>
+</body>
+</html>
